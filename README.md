@@ -1,4 +1,4 @@
-# personal-portfolio-site-nuxt-app
+# Personal Portfolio site
 
 > My laudable Nuxt.js project
 
