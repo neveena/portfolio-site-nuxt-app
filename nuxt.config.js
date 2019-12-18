@@ -2,6 +2,9 @@ const { resolve } = require('path');
 
 export default {
     mode: 'spa',
+    generate: {
+        fallback: true
+    },
     /*
     ** Headers of the page
     */

@@ -6,20 +6,21 @@
                 "Any fool can write code that a computer can understand. Good programmers write code that humans can understand."
                 <small><i>~ Martin Fowler</i></small>
             </blockquote>
-            <form name="contact" method="post" netlify netlify-honeypot="bot-field">
+            <form name="contact" method="post" data-netlify="true" data-netlify-honeypot="bot-field">
+                <input type="hidden" name="form-name" value="contact" />
                 <div class="form-row">
                     <div class="form-group col-md-6">
                         <label for="fullname">Full name</label>
-                        <input id="fullname" type="text" name="name" placeholder="Full name" class="form-control">
+                        <input id="fullname" type="text" name="name" placeholder="Full name" class="form-control" v-model="name">
                     </div>
                     <div class="form-group col-md-6">
                         <label for="email">Email</label>
-                        <input id="email" type="email" name="email" placeholder="Email" class="form-control">
+                        <input id="email" type="email" name="email" placeholder="Email" class="form-control" v-model="email">
                     </div>
                 </div>
                 <div class="form-group">
                     <label for="message">Message</label>
-                    <textarea id="message" name="message" placeholder="Message" rows="5" class="form-control" />
+                    <textarea id="message" name="message" placeholder="Message" rows="5" class="form-control" v-model="message"/>
                 </div>
                 <button type="submit" class="btn">
                     <div class="btn-custom">
