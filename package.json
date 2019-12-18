@@ -2,7 +2,7 @@
   "name": "personal-portfolio-site-nuxt-app",
   "version": "1.0.0",
   "description": "My laudable Nuxt.js project",
-  "author": "neveena",
+  "author": "Neveena Ferrao",
   "private": true,
   "scripts": {
     "serve:dev": "yarn dev",
@@ -31,8 +31,7 @@
     "node-sass": "^4.13.0",
     "nuxt": "^2.0.0",
     "sass-loader": "^8.0.0",
-    "typed.js": "^2.0.11",
-    "vue-particles": "^1.0.9"
+    "typed.js": "^2.0.11"
   },
   "devDependencies": {
     "@nuxtjs/eslint-config": "^1.0.1",
