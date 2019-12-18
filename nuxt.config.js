@@ -64,8 +64,8 @@ export default {
     ** Nuxt.js dev-modules
     */
     buildModules: [
-      // Doc: https://github.com/nuxt-community/eslint-module
-      '@nuxtjs/eslint-module'
+        // Doc: https://github.com/nuxt-community/eslint-module
+        '@nuxtjs/eslint-module'
     ],
     /*
     ** Nuxt.js modules
@@ -74,7 +74,8 @@ export default {
         'bootstrap-vue/nuxt',
         '@nuxtjs/axios',
         '@nuxtjs/pwa',
-        '@nuxtjs/style-resources'
+        '@nuxtjs/style-resources',
+        '@nuxtjs/moment'
     ],
     /*
     ** Axios module configuration

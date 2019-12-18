@@ -5,7 +5,7 @@
             <div class="row">
                 <div class="col-md-8 col-sm-6 col-xs-12">
                     <p class="copyright-text text-left">
-                        Copyright &copy;Neveena 2017 | All Rights Reserved
+                        Copyright &copy;Neveena {{ year }} | All Rights Reserved
                     </p>
                 </div>
             </div>
@@ -15,7 +15,13 @@
 
 <script>
 export default {
-    name: 'Footer'
+    name: 'Footer',
+
+    data() {
+        return {
+            year: new Date().getFullYear()
+        };
+    }
 };
 </script>
 
