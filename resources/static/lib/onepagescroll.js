@@ -1,17 +1,7 @@
 /* ===========================================================
  * onepagescroll.js v1.2.2
- * ===========================================================
- * Copyright 2014 Pete Rojwongsuriya.
- * http://www.thepetedesign.com
- *
- * Create an Apple-like website that let user scroll
- * one page at a time
- *
- * Credit: Eike Send for the awesome swipe event
  * https://github.com/peachananr/purejs-onepage-scroll
- *
  * License: GPL v3
- *
  * ========================================================== */
 /* eslint-disable */
 function onePageScroll(element, options) {
@@ -497,10 +487,6 @@ function onePageScroll(element, options) {
 /*------------------------------------------------*/
  /*  Ulitilities Method                            */
  /*------------------------------------------------*/
-
- /*-----------------------------------------------------------*/
- /*  Function by John Resig to replicate extend functionality */
- /*-----------------------------------------------------------*/
 
  Object.extend = function(orig){
    if ( orig == null )

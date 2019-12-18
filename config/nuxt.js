@@ -4,6 +4,9 @@ module.exports = {
     mode: 'spa',
     dev: process.env.NODE_ENV === 'development',
     srcDir: resolve(__dirname, '..', 'resources'),
+    generate: {
+        fallback: true
+    },
     /*
     ** Headers of the page
     */

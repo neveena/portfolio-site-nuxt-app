@@ -10,6 +10,13 @@
     opacity: 0;
 }
 
+h2 {
+    font-size: 35px;
+    @include media-breakpoint-up(md) {
+        font-size: 40px;
+    }
+}
+
 .btn-custom {
     border: 2px solid $headings;
     color: $headings;
@@ -41,13 +48,6 @@
     }
 }
 
-h2 {
-    font-size: 35px;
-    @include media-breakpoint-up(md) {
-        font-size: 40px;
-    }
-}
-
 .onepage-pagination li a {
     &:before {
         width: 7px;
@@ -60,8 +60,13 @@ h2 {
     }
 }
 
-.viewing-page-1 {
+.viewing-page-1,
+.viewing-page-4 {
     .onepage-pagination li a:before {
         background: $secondary;
     }
+}
+
+input.form-control {
+    height: 45px;
 }

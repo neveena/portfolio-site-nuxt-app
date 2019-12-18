@@ -1,0 +1,30 @@
+<template>
+    <footer>
+        <hr>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8 col-sm-6 col-xs-12">
+                    <p class="copyright-text text-left">
+                        Copyright &copy;Neveena 2017 | All Rights Reserved
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+</template>
+
+<script>
+export default {
+    name: 'Footer'
+};
+</script>
+
+<style lang="scss" scoped>
+    footer {
+        margin-top: 100px;
+        color: rgba(255, 255, 255, 0.6);
+    }
+    hr {
+        border-top: 1px solid rgba(204, 243, 129, 0.56);
+    }
+</style>

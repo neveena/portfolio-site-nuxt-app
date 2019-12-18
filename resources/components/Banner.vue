@@ -28,7 +28,7 @@ export default {
 
     mounted() {
         const options = {
-            strings: ["I'm a Frontend Developer."],
+            strings: ['My name is Neveena Ferrao', 'I\'m a Frontend Developer.'],
             typeSpeed: 50
         };
         if (process.browser) {
@@ -58,8 +58,6 @@ export default {
         display: flex;
         align-items: center;
         background-color: $primary;
-        background-position: center center;
-        background-size: cover !important;
         color: #ffffff;
 
         h2 {

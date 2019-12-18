@@ -92,11 +92,9 @@ export default {
         // }
     }
     @include media-breakpoint-up(md) {
-        .viewing-page-1 header {
-            //top: 0;
-        }
-
-        .viewing-page-2 header {
+        .viewing-page-2,
+        .viewing-page-3,
+        .viewing-page-5 header {
             //top: 100%;
 
             .navbar-brand {
@@ -108,24 +106,6 @@ export default {
                     background-color: $primary;
                 }
             }
-        }
-
-        .viewing-page-3 header {
-            //top: 200%;
-
-            .navbar-brand {
-                color: $primary;
-            }
-            .hamburger_menu {
-                &:before,
-                &:after {
-                    background-color: $primary;
-                }
-            }
-        }
-
-        .viewing-page-4 header {
-            //top: 300%;
         }
     }
 

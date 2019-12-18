@@ -4,8 +4,8 @@
             <h2>My <strong>work</strong></h2>
             <p>
                 Most of my work was done as a part of a organisation which can't be shared publicily 😞. Now, while this page is in the works, probably start with technologies used on this site.
-                This site is hosted on Netlify, NuxtJS(Vue Framework) and Bootstrap4 (Scss). The codebase is on my GitHub neveenaferrao/portfolio-site-nuxt-app.
-                You can also download a copy of resume or check out my GitHub for other projects.
+                This site is hosted on Netlify, NuxtJS(Vue Framework) and Bootstrap4 (Scss). The codebase is on my GitHub <a href="https://github.com/neveena/portfolio-site-nuxt-app" target="_blank" rel="external">neveenaferrao/portfolio-site-nuxt-app</a>.
+                You can also <a href="resume" download>download</a> a copy of resume or check out my <a href="https://github.com/neveena" target="_blank" rel="external">GitHub</a> for other projects.
             </p>
             <p>
                 If you're still not convinced or you're just curious about some of my other work, feel free to send me a mail at <a href="mailto:neveena.praveen@gmail.com">neveena.praveen@gmail.com</a>.
