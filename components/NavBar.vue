@@ -90,6 +90,10 @@ export default {
         //         }
         //     }
         // }
+        @include media-breakpoint-down(sm) {
+            height: 64px;
+            background-color: #3d195e;
+        }
     }
     @include media-breakpoint-up(md) {
         .viewing-page-2,
@@ -112,6 +116,9 @@ export default {
     header .navbar  {
         padding: 0.5rem 0rem;
         justify-content: space-between;
+        @include media-breakpoint-down(sm) {
+            padding: 0rem;
+        }
         h1 {
             font-size: 35px;
             font-weight: 700;

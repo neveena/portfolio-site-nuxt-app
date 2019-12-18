@@ -1,11 +1,15 @@
 body, html {
   margin: 0;
-  overflow: hidden;
+  /* overflow: hidden; */
   -webkit-transition: opacity 400ms;
   -moz-transition: opacity 400ms;
   transition: opacity 400ms;
 }
-
+@media (min-width: 768px) {
+    body, html {
+        overflow: hidden;
+    }
+}
 body, .onepage-wrapper, html {
   display: block;
   position: static;
@@ -47,7 +51,7 @@ body, .onepage-wrapper, html {
   width: 4px;
   height: 4px;
   display: block;
-  
+
 }
 .onepage-pagination li a:before{
   content: '';

@@ -5,7 +5,7 @@
             <p>
                 Most of my work was done as a part of a organisation which can't be shared publicily 😞. Now, while this page is in the works, probably start with technologies used on this site.
                 This site is hosted on Netlify, NuxtJS(Vue Framework) and Bootstrap4 (Scss). The codebase is on my GitHub <a href="https://github.com/neveena/portfolio-site-nuxt-app" target="_blank" rel="external">neveenaferrao/portfolio-site-nuxt-app</a>.
-                You can also <a href="resume" download>download</a> a copy of resume or check out my <a href="https://github.com/neveena" target="_blank" rel="external">GitHub</a> for other projects.
+                You can also <a href="/Neveena-Frontend_Developer.pdf" download>download</a> a copy of resume or check out my <a href="https://github.com/neveena" target="_blank" rel="external">GitHub</a> for other projects.
             </p>
             <p>
                 If you're still not convinced or you're just curious about some of my other work, feel free to send me a mail at <a href="mailto:neveena.praveen@gmail.com">neveena.praveen@gmail.com</a>.
@@ -24,9 +24,11 @@ export default {
     .portfolio {
         background-color: $secondary;
         padding: 70px 0;
-        min-height: 100vh;
         display: flex;
         align-items: center;
+        @include media-breakpoint-up(md) {
+            min-height: 100vh;
+        }
     }
 
     h2 {
@@ -38,10 +40,9 @@ export default {
     }
 
     p {
-        font-size: 16px;
-        text-align: justify;
+        font-size: 17px;
         @include media-breakpoint-up(md) {
-            font-size: 20px;
+            font-size: 22px;
         }
     }
 

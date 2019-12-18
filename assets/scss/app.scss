@@ -47,23 +47,42 @@ h2 {
         }
     }
 }
-
 .onepage-pagination li a {
     &:before {
         width: 7px;
         height: 7px;
-        background: $primary;
     }
-
     &.active:before {
-        border: 2px solid $primary;
+        left: 8px;
+        margin-top: -3px;
+        width: 12px;
+        height: 12px;
+    }
+}
+.viewing-page-2,
+.viewing-page-3 {
+    .onepage-pagination li a {
+        &:before {
+            background: $primary;
+        }
+
+        &.active:before {
+            border: 2px solid $primary;
+            background: transparent;
+        }
     }
 }
 
 .viewing-page-1,
 .viewing-page-4 {
-    .onepage-pagination li a:before {
-        background: $secondary;
+    .onepage-pagination li a {
+        &:before {
+            background: $secondary;
+        }
+        &.active:before {
+            border: 2px solid $secondary;
+            background: transparent;
+        }
     }
 }
 

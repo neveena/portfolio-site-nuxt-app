@@ -32,9 +32,6 @@ export default {
 
     mounted() {
         /* eslint-disable */
-        // let element = document.getElementById('__nuxt');
-        // element.classList.add('main');
-
         onePageScroll('.main', {
             sectionContainer: 'section',
             easing: 'ease',
@@ -45,7 +42,7 @@ export default {
             afterMove: (index) => {},
             loop: false,
             keyboard: true,
-            responsiveFallback: 600
+            responsiveFallback: 767
         });
     },
 

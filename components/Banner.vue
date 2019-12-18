@@ -11,11 +11,11 @@
                 </p>
                 <small>  — John F. Woods</small>
             </blockquote>
-            <button class="btn">
+            <a class="btn" href="/Neveena-Frontend_Developer.pdf" download>
                 <div class="btn-custom">
                     Download Resume
                 </div>
-            </button>
+            </a>
         </div>
     </section>
 </template>
@@ -52,16 +52,22 @@ export default {
 <style lang="scss" scoped>
     section {
         position: relative;
-        padding: 90px 0;
+        padding: 60px 0;
         text-align: center;
         min-height: 100vh;
         display: flex;
         align-items: center;
         background-color: $primary;
         color: #ffffff;
+        @include media-breakpoint-up(md) {
+             padding: 90px 0;
+        }
 
         h2 {
-            font-size: 40px;
+            font-size: 34px;
+            @include media-breakpoint-up(md) {
+                font-size: 40px;
+            }
         }
     }
 
@@ -70,8 +76,11 @@ export default {
         z-index: 1;
     }
     .title {
-        font-size: 55px;
         color: $headings;
+        font-size: 38px;
+        @include media-breakpoint-up(md) {
+            font-size: 53px;
+        }
     }
 
     span.wave {
@@ -100,7 +109,7 @@ export default {
         }
     }
 
-    button {
+    .btn {
         margin-top: 30px;
         position: relative;
         overflow: hidden;

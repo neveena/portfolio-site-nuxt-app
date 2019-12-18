@@ -7,20 +7,38 @@
                 <small><i>~ Martin Fowler</i></small>
             </blockquote>
             <form name="contact-form" method="post">
-                <input type="hidden" name="form-name" value="contact-form" />
+                <input type="hidden" name="form-name" value="contact-form">
                 <div class="form-row">
                     <div class="form-group col-md-6">
                         <label for="fullname">Full name</label>
-                        <input id="fullname" type="text" name="name" placeholder="Full name" class="form-control" v-model="name">
+                        <input
+                            id="fullname"
+                            type="text"
+                            name="name"
+                            placeholder="Full name"
+                            class="form-control"
+                        >
                     </div>
                     <div class="form-group col-md-6">
                         <label for="email">Email</label>
-                        <input id="email" type="email" name="email" placeholder="Email" class="form-control" v-model="email">
+                        <input
+                            id="email"
+                            type="email"
+                            name="email"
+                            placeholder="Email"
+                            class="form-control"
+                        >
                     </div>
                 </div>
                 <div class="form-group">
                     <label for="message">Message</label>
-                    <textarea id="message" name="message" placeholder="Message" rows="5" class="form-control" v-model="message"/>
+                    <textarea
+                        id="message"
+                        name="message"
+                        placeholder="Message"
+                        rows="5"
+                        class="form-control"
+                    />
                 </div>
                 <button type="submit" class="btn">
                     <div class="btn-custom">
@@ -46,10 +64,13 @@ export default {
 
 <style lang="scss" scoped>
     section {
-        padding: 100px 0 0;
+        padding: 70px 0 0;
         text-align: center;
         background-color: $primary;
-        min-height: 100vh;
+        @include media-breakpoint-up(md) {
+            min-height: 100vh;
+            padding: 100px 0 0;
+        }
 
         h2 {
             color: $headings;
@@ -79,8 +100,10 @@ export default {
     form {
         text-align: left;
         color: #ffffff;
-        max-width: 800px;
         margin: 30px auto;
+        @include media-breakpoint-up(md) {
+            max-width: 800px;
+        }
     }
 
     label {
@@ -92,7 +115,7 @@ export default {
         overflow: hidden;
         z-index: 1;
         padding: 0;
-        margin: 20px 0 0 auto;
+        margin: 25px auto;
         display: block;
     }
 

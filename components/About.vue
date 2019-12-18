@@ -10,11 +10,11 @@
             <p>
                 I enjoy pushing the limits of the browser, solving difficult problems, and making usable applications. Highly self-motivated, goal-oriented with a quest and deal to learn new technologies. I always believes in innovation, passion and success.
             </p>
-            <button class="btn">
+            <a href="https://www.linkedin.com/in/neveenaferrao/" target="_blank" rel="external nofollow" class="btn btn-link">
                 <div class="btn-custom">
                     Connect with me <strong>LinkedIn</strong>
                 </div>
-            </button>
+            </a>
         </div>
     </section>
 </template>
@@ -30,17 +30,19 @@ export default {
     $bg-color: #f7f7f7;
     $dot-color: rgba(61, 25, 94, 0.25);
 
-    // Dimensions
-    $dot-size: 2px;
-    $dot-space: 22px;
-
     .about {
-        background: linear-gradient(90deg, $bg-color ($dot-space - $dot-size), transparent 1%) center, linear-gradient($bg-color ($dot-space - $dot-size), transparent 1%) center, $dot-color;
-        background-size: $dot-space $dot-space;
-        padding: 70px 0;
-        min-height: 100vh;
+        padding: 50px 0;
         display: flex;
         align-items: center;
+        background: linear-gradient(90deg, #f7f7f7 20px, transparent 1%) center, linear-gradient(#f7f7f7 20px, transparent 1%) center, rgba(61, 25, 94, 0.1);
+        background-size: 22px 22px;
+
+        @include media-breakpoint-up(md) {
+            padding: 80px 0;
+            background: linear-gradient(90deg, $bg-color (22px - 2px), transparent 1%) center, linear-gradient($bg-color (22px - 2px), transparent 1%) center, $dot-color;
+            background-size: 22px 22px;
+            min-height: 100vh;
+        }
 
         h2 {
             color: $primary;
@@ -61,25 +63,26 @@ export default {
             @include media-breakpoint-up(md) {
                 font-size: 22px;
             }
+
+            a {
+                font-weight: 700;
+                text-decoration: underline;
+
+                &:hover {
+                    color: #607D8B;
+                }
+            }
         }
     }
 
-    a {
-        font-weight: 700;
-        text-decoration: underline;
-
-        &:hover {
-            color: #607D8B;
-        }
-    }
-
-    button {
+    .btn-link {
         position: relative;
         overflow: hidden;
         z-index: 1;
         padding: 0;
         font-weight: 500;
         font-size: 15px;
+        text-decoration: none;
 
         @include media-breakpoint-up(md) {
             font-size: 20px;
