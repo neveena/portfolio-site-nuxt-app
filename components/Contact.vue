@@ -6,8 +6,8 @@
                 "Any fool can write code that a computer can understand. Good programmers write code that humans can understand."
                 <small><i>~ Martin Fowler</i></small>
             </blockquote>
-            <form name="contact" method="post" data-netlify="true" data-netlify-honeypot="bot-field">
-                <input type="hidden" name="form-name" value="contact" />
+            <form name="contact-form" method="post">
+                <input type="hidden" name="form-name" value="contact-form" />
                 <div class="form-row">
                     <div class="form-group col-md-6">
                         <label for="fullname">Full name</label>
