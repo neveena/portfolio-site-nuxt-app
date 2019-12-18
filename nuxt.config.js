@@ -1,12 +1,7 @@
 const { resolve } = require('path');
 
-module.exports = {
+export default {
     mode: 'spa',
-    dev: process.env.NODE_ENV === 'development',
-    srcDir: resolve(__dirname, '..', 'resources'),
-    generate: {
-        fallback: true
-    },
     /*
     ** Headers of the page
     */
@@ -66,16 +61,14 @@ module.exports = {
     ** Nuxt.js dev-modules
     */
     buildModules: [
-        // Doc: https://github.com/nuxt-community/eslint-module
-        '@nuxtjs/eslint-module'
+      // Doc: https://github.com/nuxt-community/eslint-module
+      '@nuxtjs/eslint-module'
     ],
     /*
     ** Nuxt.js modules
     */
     modules: [
-        // Doc: https://bootstrap-vue.js.org
         'bootstrap-vue/nuxt',
-        // Doc: https://axios.nuxtjs.org/usage
         '@nuxtjs/axios',
         '@nuxtjs/pwa',
         '@nuxtjs/style-resources'
@@ -90,10 +83,10 @@ module.exports = {
     ** Build configuration
     */
     build: {
-        /*
-        ** You can extend webpack config here
-        */
-        extend (config, ctx) {
-        }
+      /*
+      ** You can extend webpack config here
+      */
+      extend (config, ctx) {
+      }
     }
-};
+  }
