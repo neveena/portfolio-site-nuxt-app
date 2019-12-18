@@ -1,5 +1,5 @@
 <template>
-    <div class="banner">
+    <section>
         <div class="container">
             <h2>Hello <span class="wave">👋</span></h2>
             <h2>
@@ -17,7 +17,7 @@
                 </div>
             </button>
         </div>
-    </div>
+    </section>
 </template>
 
 <script>
@@ -50,9 +50,9 @@ export default {
     }
 </style>
 <style lang="scss" scoped>
-    .banner {
+    section {
         position: relative;
-        padding: 150px 0;
+        padding: 90px 0;
         text-align: center;
         min-height: 100vh;
         display: flex;

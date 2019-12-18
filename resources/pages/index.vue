@@ -1,24 +1,11 @@
 <template>
     <div>
         <nav-bar />
-        <div id="nav-scroller">
+        <div id="nav-scroller" class="main">
             <banner id="home" />
             <about id="about" />
-            <div id="portfolio" style="height: 500px;">
-                <h2>Work</h2>
-                <p>Most of my work was done as a part of a organisation which can't be shared publicily.</p>
-                <p>
-                    Hey there! Most of my work was done as a part of a organisation which can't be shared publicily 😞. Now, while this page is in the works, probably start with technologies used on my site.
-                    This site is hosted on Netlify, uses Vue, NuxtJS, Bootstrap4 and Styled Components and the codebase is right on my GitHub neveenaferrao/personal-portfolio-site-nuxt-app.
-                    You can also download a copy of resume or check out my GitHub.
-                </p>
-                <p>
-                    If you're still not convinced or you're just curious about some of my other work and want to hire me, feel free to send me a mail and we can schedule a demo call for sometime where I'll show you the apps I've worked on.
-                </p>
-            </div>
-            <div id="contact" style="height: 500px;">
-                contact
-            </div>
+            <portfolio id="portfolio" />
+            <contact id="contact" />
         </div>
     </div>
 </template>
@@ -27,16 +14,41 @@
 import NavBar from '~/components/Navbar';
 import Banner from '~/components/Banner';
 import About from '~/components/About';
+import Portfolio from '~/components/Portfolio';
+import Contact from '~/components/Contact';
 
 export default {
     components: {
         NavBar,
         Banner,
-        About
+        About,
+        Portfolio,
+        Contact
     },
+
     created() {
         this.$root.$on('bv::scrollspy::activate', this.onActivate);
     },
+
+    mounted() {
+        /* eslint-disable */
+        // let element = document.getElementById('__nuxt');
+        // element.classList.add('main');
+
+        onePageScroll('.main', {
+            sectionContainer: 'section',
+            easing: 'ease',
+            animationTime: 1000,
+            pagination: true,
+            updateURL: true,
+            beforeMove: (index) => {},
+            afterMove: (index) => {},
+            loop: false,
+            keyboard: true,
+            responsiveFallback: 600
+        });
+    },
+
     methods: {
         onActivate(target) {
             // console.log('Received event: "bv::scrollspy::activate" for target ', target);
@@ -47,8 +59,8 @@ export default {
 
 <style>
     #nav-scroller {
-        position: relative;
+        /* position: relative;
         overflow-y: scroll;
-        height: 100vh;
+        height: 100vh; */
     }
 </style>

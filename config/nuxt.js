@@ -1,4 +1,4 @@
-const { resolve } = require('path')
+const { resolve } = require('path');
 
 module.exports = {
     mode: 'spa',
@@ -17,18 +17,18 @@ module.exports = {
         link: [
             { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
             { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css?family=Work+Sans:400,500,600,700&display=swap' },
+            { rel: 'stylesheet', href: 'lib/onepage-scroll.css' }
         ],
         script: [
-            {
-                src: 'https://cdn.polyfill.io/v2/polyfill.min.js',
-            },
-        ],
+            { src: 'https://cdn.polyfill.io/v2/polyfill.min.js' },
+            { src: 'lib/onepagescroll.js' }
+        ]
     },
     manifest: {
         name: 'neveena',
         short_name: 'neveena',
         start_url: './',
-        display: 'standalone',
+        display: 'standalone'
     },
     /*
     ** Customize the progress-bar color
@@ -44,7 +44,7 @@ module.exports = {
         scss: [
             '@/assets/scss/_variables.scss',
             resolve(__dirname, '../node_modules/bootstrap/scss/mixins/**/*.scss'),
-            '@/assets/scss/mixins/**/*.scss',
+            '@/assets/scss/mixins/**/*.scss'
         ]
     },
     /*
@@ -58,7 +58,6 @@ module.exports = {
     ** Plugins to load before mounting the App
     */
     plugins: [
-        '@/plugins/particle.js'
     ],
     /*
     ** Nuxt.js dev-modules
@@ -92,7 +91,6 @@ module.exports = {
         ** You can extend webpack config here
         */
         extend (config, ctx) {
-
         }
     }
-}
+};
