@@ -17,6 +17,7 @@
                             name="name"
                             placeholder="Full name"
                             class="form-control"
+                            required
                         >
                     </div>
                     <div class="form-group col-md-6">
@@ -27,6 +28,7 @@
                             name="email"
                             placeholder="Email"
                             class="form-control"
+                            required
                         >
                     </div>
                 </div>
@@ -38,6 +40,7 @@
                         placeholder="Message"
                         rows="5"
                         class="form-control"
+                        required
                     />
                 </div>
                 <button type="submit" class="btn">
