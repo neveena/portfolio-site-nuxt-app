@@ -22,7 +22,7 @@ export default {
         ],
         script: [
             { src: 'https://cdn.polyfill.io/v2/polyfill.min.js' },
-            { src: 'lib/onepagescroll.js' }
+            { src: 'lib/onepagescroll.js', async: true, defer: true }
         ]
     },
     manifest: {

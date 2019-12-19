@@ -379,7 +379,7 @@ function onePageScroll(element, options) {
 		} else {
             pos = (document.querySelector(settings.sectionContainer + "[data-index='" + (parseInt(index) + 1) + "']").offsetTop) * -1;
 		}
-		
+
 		var next_index = next.dataset.index;
 		_removeClass(current, "active");
 		_addClass(next, "active");
