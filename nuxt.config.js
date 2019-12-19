@@ -21,7 +21,8 @@ export default {
             { rel: 'stylesheet', href: 'lib/onepage-scroll.css' }
         ],
         script: [
-            { src: 'https://cdn.polyfill.io/v2/polyfill.min.js' },
+            // { src: 'https://cdn.polyfill.io/v2/polyfill.min.js' },
+            { src: 'https://cdnjs.cloudflare.com/ajax/libs/babel-polyfill/7.2.5/polyfill.min.js' },
             { src: 'lib/onepagescroll.js', async: true, defer: true }
         ]
     },
