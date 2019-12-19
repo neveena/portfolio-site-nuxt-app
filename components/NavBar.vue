@@ -146,6 +146,8 @@ export default {
         height: 22px;
         width: 85px;
         cursor: pointer;
+        -moz-appearance: none;
+        -webkit-appearance: none;
 
         &:before,
         &:after {
