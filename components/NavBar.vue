@@ -1,63 +1,108 @@
 <template>
-    <header :class="{ scroll: scrolled }">
+    <header>
         <div class="container">
             <b-navbar v-b-scrollspy="options" toggleable="lg" type="dark">
                 <b-navbar-brand tag="h1" class="mb-0">
                     Neveena
                 </b-navbar-brand>
-                <a type="button" aria-haspopup="menu" aria-label="Open menu" class="hamburger_menu" />
-                <!-- <b-navbar-nav class="ml-auto">
-                    <b-nav-item href="#home">
-                        Home
+                <a
+                    :class="{ open: status.navOpen }"
+                    @click.prevent="navOpen"
+                    type="button"
+                    aria-haspopup="menu"
+                    aria-label="Open menu"
+                    class="hamburger_menu"
+                />
+                <b-navbar-nav :class="{ show: status.navOpen }" class="ml-auto">
+                    <b-nav-item
+                        v-for="nav in navigation"
+                        :key="nav.index"
+                        @click="scrollToSection(nav.index)"
+                        :class="{ active: nav.index === getCurrentSection }"
+                    >
+                        {{ nav.name }}
                     </b-nav-item>
-                    <b-nav-item href="#about">
-                        About
-                    </b-nav-item>
-                    <b-nav-item href="#portfolio">
-                        Portfolio
-                    </b-nav-item>
-                    <b-nav-item href="#contact">
-                        Contact us
-                    </b-nav-item>
-                </b-navbar-nav> -->
+                </b-navbar-nav>
             </b-navbar>
         </div>
     </header>
 </template>
 
 <script>
+import { mapMutations } from 'vuex';
+
 export default {
     name: 'NavBar',
 
     data() {
         return {
             status: {
-                scroll: false
+                navOpen: false
             },
             options: {
                 element: '#nav-scroller',
                 offset: 70,
                 method: 'position'
-            }
+            },
+            navigation: [
+                {
+                    name: 'Home',
+                    index: 1
+                },
+                {
+                    name: 'About',
+                    index: 2
+                },
+                {
+                    name: 'Portfolio',
+                    index: 3
+                },
+                {
+                    name: 'Contact us',
+                    index: 4
+                }
+            ]
         };
     },
 
     computed: {
-        scrolled() {
-            return this.status.scroll;
+        getCurrentSection() {
+            return this.$store.state.navigation.currentSection;
         }
     },
 
-    mounted() {
-        const el = document.querySelector('#nav-scroller');
-        el.addEventListener('scroll', () => {
-            if (el.scrollTop < 20) {
-                this.status.scroll = false;
-                return;
-            }
+    methods: {
+        ...mapMutations({
+            setCurrentSection: 'navigation/setCurrentSection'
+        }),
 
-            this.status.scroll = true;
-        });
+        /**
+         * Toggle menu section
+        */
+        navOpen() {
+            this.status.navOpen = !this.status.navOpen;
+        },
+
+        /**
+         * Scrolls to the selected section
+         * {param|Number} index - index value of current selected
+         */
+        scrollToSection(index) {
+            this.setCurrentSection(index);
+            const screenWidth = window.innerWidth || document.documentElement.clientWidth;
+
+            if (screenWidth > 767) {
+                const el = document.querySelector('.main');
+                moveTo(el, index);
+            } else {
+                const el = document.querySelector(`section[data-index="${index}"]`).offsetTop;
+                scrollTo({
+                    top: el - 40,
+                    left: 0,
+                    behavior: 'smooth'
+                });
+            }
+        }
     }
 };
 </script>
@@ -69,41 +114,20 @@ export default {
         top: 0;
         z-index: 6;
 
-        // &.scroll {
-        //     box-shadow: 0 1px 8px 3px rgba(0, 0, 0, 0.050980392156862744);
-        //     background-color: #ffffff;
-
-        //     .navbar-dark .navbar-nav .nav-link {
-        //         color: $primary;
-        //         font-size: 18px;
-        //     }
-
-        //     .navbar h1 {
-        //         color: $primary;
-        //         font-size: 27px;
-        //     }
-
-        //     .hamburger_menu {
-        //         &:before,
-        //         &:after {
-        //             background-color: $primary;
-        //         }
-        //     }
-        // }
         @include media-breakpoint-down(sm) {
             height: 64px;
-            background-color: #3d195e;
+           background-color: $primary;
         }
     }
+
     @include media-breakpoint-up(md) {
         .viewing-page-2,
         .viewing-page-3,
         .viewing-page-5 header {
-            //top: 100%;
-
             .navbar-brand {
                 color: $primary;
             }
+
             .hamburger_menu {
                 &:before,
                 &:after {
@@ -127,18 +151,42 @@ export default {
         }
     }
 
-    // .navbar-dark .navbar-nav .nav-link {
-    //     color: #ffffff;
-    //     font-size: 20px;
-    //     padding-right: 0.8rem;
-    //     padding-left: 0.8rem;
-    //     &.active {
-    //         color: #3d195f;
-    //     }
-    // }
-    // .nav-item.active {
-    //     //color: $primary;
-    // }
+    .navbar-nav {
+        position: absolute;
+        right: -7px;
+        top: 7px;
+        background-color: $primary;
+        padding: 0;
+        border-radius: 4px;
+        flex-direction: column;
+        z-index: 1;
+        height: 0;
+        width: 0;
+        transition: all 0.2s linear;
+        overflow: hidden;
+
+        @include media-breakpoint-up(md) {
+            top: 23px;
+        }
+        .nav-link {
+            color: #c0c0c1;
+            font-size: 20px;
+        }
+
+        &.show {
+            width: 200px;
+            height: 230px;
+            padding: 20px;
+            box-shadow: 0 0 20px #272727;
+        }
+
+        .nav-item {
+            width: 128px;
+            &.active {
+                font-weight: 600;
+            }
+        }
+    }
 
     .hamburger_menu {
         position: relative;
@@ -148,13 +196,15 @@ export default {
         cursor: pointer;
         -moz-appearance: none;
         -webkit-appearance: none;
+        transition: all 0.7s ease;
+        z-index: 2;
 
         &:before,
         &:after {
             content: '';
             width: 58px;
             height: 3px;
-            //right: 30px;
+            right: 0;
             position: absolute;
             transition: 0.2s ease;
             transform: rotate(0deg);
@@ -164,9 +214,26 @@ export default {
         &:before {
             top: 0;
         }
+
         &:after {
             width: 42px;
             top: 1em;
+        }
+
+        &.open {
+            &:before,
+            &:after {
+                background-color: #c0c0c1;
+            }
+            &:before {
+                top: 16px;
+                transform: rotate(45deg);
+                width: 34px;
+            }
+            &:after {
+                width: 34px;
+                transform: rotate(-45deg);
+            }
         }
     }
 </style>

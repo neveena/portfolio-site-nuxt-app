@@ -90,8 +90,6 @@ function onePageScroll(element, options) {
   			}
           }
         var pos = (document.querySelector(settings.sectionContainer + "[data-index='" + init_index + "']").offsetTop) * -1;
-        console.log('init');
-  		//var pos = ((init_index - 1) * 100) * -1;
   		_transformPage(el, settings, pos, init_index);
 
   	}else{
@@ -115,7 +113,6 @@ function onePageScroll(element, options) {
   	}
 
   	_mouseWheelHandler = function(event) {
-  		//event.preventDefault();
   		var delta = event.wheelDelta || -event.detail;
   		if (!_hasClass(body, "disabled-onepage-scroll")) _init_scroll(event, delta);
   	}
@@ -307,8 +304,6 @@ function onePageScroll(element, options) {
 			document.removeEventListener('mousewheel', _mouseWheelHandler);
 			document.removeEventListener('DOMMouseScroll', _mouseWheelHandler);
 			_swipeEvents(el);
-			//document.removeEventListener("swipeDown");
-			//document.removeEventListener("swipeUp");
 
 		} else {
 
@@ -368,7 +363,6 @@ function onePageScroll(element, options) {
   /*---------------------------------*/
 
    this.moveDown = function(el3) {
-    console.log('moveDowm');
     if (typeof el3 == "string") el3 = document.querySelector(el3);
 
     var index = document.querySelector(settings.sectionContainer +".active").dataset.index,
@@ -382,12 +376,10 @@ function onePageScroll(element, options) {
 			} else {
 				return
 			}
-
 		} else {
-            //pos = (index * 100) * -1;
             pos = (document.querySelector(settings.sectionContainer + "[data-index='" + (parseInt(index) + 1) + "']").offsetTop) * -1;
-        }
-        console.log(pos);
+		}
+		
 		var next_index = next.dataset.index;
 		_removeClass(current, "active");
 		_addClass(next, "active");
@@ -412,7 +404,6 @@ function onePageScroll(element, options) {
   /*---------------------------------*/
 
 	this.moveUp = function(el4) {
-    console.log('moveUp');
 	  if (typeof el4 == "string") el4 = document.querySelector(el4);
 
 	  var index = document.querySelector(settings.sectionContainer +".active").dataset.index,
@@ -428,9 +419,7 @@ function onePageScroll(element, options) {
 			}
 		}else {
             pos = (document.querySelector(settings.sectionContainer + "[data-index='" + (parseInt(index) - 1) + "']").offsetTop) * -1;
-			//pos = ((next.dataset.index - 1) * 100) * -1;
         }
-        console.log(pos);
 		var next_index = next.dataset.index;
 		_removeClass(current, "active")
 		_addClass(next, "active")
@@ -454,7 +443,6 @@ function onePageScroll(element, options) {
   /*-------------------------------------------*/
 
   this.moveTo = function(el5, page_index) {
-    console.log('moveTo');
     if (typeof el5 == "string") el5 = document.querySelector(el5);
 
 		var current = document.querySelector(settings.sectionContainer + ".active"),
@@ -471,7 +459,6 @@ function onePageScroll(element, options) {
             _addClass(body, "viewing-page-"+ next_index);
 
             pos = (document.querySelector(settings.sectionContainer + "[data-index='" + page_index + "']").offsetTop) * -1;
-			//pos = ((page_index - 1) * 100) * -1;
 
 			if (history.replaceState && settings.updateURL == true) {
 				var href = window.location.href.substr(0,window.location.href.indexOf('#')) + "#" + (parseInt(page_index) - 1);

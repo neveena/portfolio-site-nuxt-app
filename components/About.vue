@@ -93,15 +93,15 @@ export default {
     .btn-custom {
         border-color: $primary;
         color: $primary;
-        background: $secondary;
+        background-color: $secondary;
 
         &:before {
-            background: $primary;
+            background-color: $primary;
         }
 
         &:hover {
             color: $secondary;
-            background: transparent;
+            background-color: transparent;
             &:before {
                 transform: translateX(0px);
                 border-color: $primary;

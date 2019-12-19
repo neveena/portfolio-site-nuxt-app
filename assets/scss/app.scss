@@ -34,7 +34,7 @@ h2 {
         height: 108%;
         position: absolute;
         pointer-events: none;
-        background: $headings;
+        background-color: $secondary;
         transform: translateX(-101%);
         transition: transform 0.5s cubic-bezier(0.23, 1, 0.32, 1);
     }
@@ -63,12 +63,12 @@ h2 {
 .viewing-page-3 {
     .onepage-pagination li a {
         &:before {
-            background: $primary;
+            background-color: $primary;
         }
 
         &.active:before {
             border: 2px solid $primary;
-            background: transparent;
+            background-color: transparent;
         }
     }
 }
@@ -77,11 +77,11 @@ h2 {
 .viewing-page-4 {
     .onepage-pagination li a {
         &:before {
-            background: $secondary;
+            background-color: $secondary;
         }
         &.active:before {
             border: 2px solid $secondary;
-            background: transparent;
+            background-color: transparent;
         }
     }
 }

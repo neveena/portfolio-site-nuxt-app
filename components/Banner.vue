@@ -16,6 +16,9 @@
                     Download Resume
                 </div>
             </a>
+            <div @click.prevent="scrollDown(2)" class="scroll-down">
+                <i class="arrow" />
+            </div>
         </div>
     </section>
 </template>
@@ -36,6 +39,18 @@ export default {
                 /* eslint-disable no-unused-vars */
                 const typed = new Typed('.title', options);
             });
+        }
+    },
+
+    methods: {
+        /**
+         * Scrolls to the next section
+         * { param|Number} index - index value of current selected
+         */
+        scrollDown(index) {
+            this.$store.commit('navigation/setCurrentSection', index);
+            const el = document.querySelector('.main');
+            moveTo(el, index);
         }
     }
 };
@@ -59,6 +74,7 @@ export default {
         align-items: center;
         background-color: $primary;
         color: #ffffff;
+
         @include media-breakpoint-up(md) {
              padding: 90px 0;
         }
@@ -71,10 +87,6 @@ export default {
         }
     }
 
-    .container {
-        position: relative;
-        z-index: 1;
-    }
     .title {
         color: $headings;
         font-size: 38px;
@@ -115,5 +127,37 @@ export default {
         overflow: hidden;
         z-index: 1;
         padding: 0;
+    }
+
+    .scroll-down {
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 30px;
+        animation: bounce 0.5s infinite alternate;
+        cursor: pointer;
+        display: none;
+
+        @include media-breakpoint-up(md) {
+            display: block;
+        }
+    }
+
+    i {
+        border: solid #ffffff;
+        border-width: 0 3px 3px 0;
+        display: inline-block;
+        padding: 13px;
+        margin-top: 70px;
+        transform: rotate(45deg);
+    }
+
+    @keyframes bounce {
+        from {
+            transform: translateY(0px);
+        }
+        to {
+            transform: translateY(-20px);
+        }
     }
 </style>

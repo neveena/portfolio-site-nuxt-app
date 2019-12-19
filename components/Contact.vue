@@ -53,6 +53,7 @@
 
 <script>
 import FooterNav from './Footer';
+
 export default {
     name: 'Contact',
 
@@ -67,6 +68,7 @@ export default {
         padding: 70px 0 0;
         text-align: center;
         background-color: $primary;
+
         @include media-breakpoint-up(md) {
             min-height: 100vh;
             padding: 100px 0 0;

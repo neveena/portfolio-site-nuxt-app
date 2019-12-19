@@ -26,10 +26,6 @@ export default {
         Contact
     },
 
-    created() {
-        this.$root.$on('bv::scrollspy::activate', this.onActivate);
-    },
-
     mounted() {
         /* eslint-disable */
         onePageScroll('.main', {
@@ -37,27 +33,16 @@ export default {
             easing: 'ease',
             animationTime: 1000,
             pagination: true,
-            updateURL: true,
+            updateURL: false,
             beforeMove: (index) => {},
-            afterMove: (index) => {},
+            afterMove: (index) => {
+                this.$store.commit('navigation/setCurrentSection', parseInt(index));
+            },
             loop: false,
             keyboard: true,
             responsiveFallback: 767
         });
     },
-
-    methods: {
-        onActivate(target) {
-            // console.log('Received event: "bv::scrollspy::activate" for target ', target);
-        }
-    }
 };
 </script>
 
-<style>
-    #nav-scroller {
-        /* position: relative;
-        overflow-y: scroll;
-        height: 100vh; */
-    }
-</style>
