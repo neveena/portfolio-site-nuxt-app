@@ -11,7 +11,7 @@
                 </p>
                 <small>  — {{ content.author }}</small>
             </blockquote>
-            <a class="btn" :href="content.resume" download>
+            <a :href="content.resume" class="btn" download>
                 <div class="btn-custom">
                     Download Resume
                 </div>

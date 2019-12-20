@@ -60,6 +60,10 @@ import FooterNav from './Footer';
 export default {
     name: 'Contact',
 
+    components: {
+        FooterNav
+    },
+
     props: {
         content: {
             type: Object,
@@ -67,10 +71,6 @@ export default {
                 return {};
             }
         }
-    },
-
-    components: {
-        FooterNav
     }
 };
 </script>
