@@ -1,6 +1,6 @@
 backend:
   name: git-gateway
-  branch: develop-netlify-cms
+  branch: master
   site_domain: https://neveenaferrao.netlify.com/
 
 media_folder: static/img

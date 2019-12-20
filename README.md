@@ -2,7 +2,7 @@
 [![npm version](https://badge.fury.io/js/nuxt.svg)](https://badge.fury.io/js/nuxt)
 # Personal Portfolio site
 
-This site runs using Nuxt.js, Vue.js, Netlify CMS, and is hosted on Netlify.
+> This site uses Nuxt.js, Vue.js, Netlify CMS, Bootstrap4 and is hosted on Netlify.
 
 ## Build Setup
 
