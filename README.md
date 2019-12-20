@@ -1,3 +1,5 @@
+[![Netlify Status](https://api.netlify.com/api/v1/badges/eed5b5fd-34d0-4630-b905-600abdbcd3b5/deploy-status)](https://app.netlify.com/sites/neveenaferrao/deploys)
+[![npm version](https://badge.fury.io/js/nuxt.svg)](https://badge.fury.io/js/nuxt)
 # Personal Portfolio site
 
 > My marvelous Nuxt.js project
