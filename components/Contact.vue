@@ -1,10 +1,10 @@
 <template>
     <section>
         <div class="container">
-            <h2>Contact me</h2>
+            <h2>{{ content.title }}</h2>
             <blockquote>
-                "Any fool can write code that a computer can understand. Good programmers write code that humans can understand."
-                <small><i>~ Martin Fowler</i></small>
+                {{ content.quote }}
+                <small><i>~ {{ content.author }}</i></small>
             </blockquote>
             <form name="contact-form" method="post">
                 <input type="hidden" name="form-name" value="contact-form">
@@ -59,6 +59,15 @@ import FooterNav from './Footer';
 
 export default {
     name: 'Contact',
+
+    props: {
+        content: {
+            type: Object,
+            default: () => {
+                return {};
+            }
+        }
+    },
 
     components: {
         FooterNav
