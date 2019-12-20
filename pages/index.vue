@@ -18,6 +18,12 @@ import Portfolio from '~/components/Portfolio';
 import Contact from '~/components/Contact';
 
 export default {
+    head() {
+        return {
+            script: [{ src: 'https://identity.netlify.com/v1/netlify-identity-widget.js' }],
+        };
+    },
+
     components: {
         NavBar,
         Banner,
