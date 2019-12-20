@@ -2,7 +2,7 @@
 [![npm version](https://badge.fury.io/js/nuxt.svg)](https://badge.fury.io/js/nuxt)
 # Personal Portfolio site
 
-> My marvelous Nuxt.js project
+This site runs using Nuxt.js, Vue.js, Netlify CMS, and is hosted on Netlify.
 
 ## Build Setup
 

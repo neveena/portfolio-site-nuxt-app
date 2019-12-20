@@ -1,15 +1,8 @@
 <template>
     <section class="about">
         <div class="container">
-            <h2>A little <span>about me</span></h2>
-            <p>
-                I have been developing websites professionally for over 5 years. I've built products for companies and businesses around the globe ranging from basic websites to complex solutions apps with focus on fast, elegant and accessible user experiences.
-                Most recently, I was a front end developer with <a href="http://netsells.co.uk/" rel="external nofollow noreferrer" target="_blank">Netsells Ltd</a>, building multiple Vue.js based applications for organisation and individuals.
-                Before that, I was a Web developer at <a href="http://www.clovermark.in/" rel="external nofollow noreferrer" target="_blank">Four Clover Reality Private Ltd</a>, building microsites, landing pages and internal CRM.
-            </p>
-            <p>
-                I enjoy pushing the limits of the browser, solving difficult problems, and making usable applications. Highly self-motivated, goal-oriented with a quest and deal to learn new technologies. I always believes in innovation, passion and success.
-            </p>
+            <h2 v-html="content.title" />
+            <div v-html="content.content" class="text" />
             <a href="https://www.linkedin.com/in/neveenaferrao/" target="_blank" rel="external nofollow noreferrer" class="btn btn-link">
                 <div class="btn-custom">
                     Connect with me <strong>LinkedIn</strong>
@@ -21,7 +14,16 @@
 
 <script>
 export default {
-    name: 'About'
+    name: 'About',
+
+    props: {
+        content: {
+            type: Object,
+            default: () => {
+                return {};
+            }
+        }
+    }
 };
 </script>
 
@@ -51,12 +53,12 @@ export default {
                 margin-bottom: 30px;
             }
 
-            span {
+            /deep/ span {
                 font-weight: 700;
             }
         }
 
-        p {
+        .text /deep/ p {
             font-size: 16px;
             color: #474747;
 

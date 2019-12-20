@@ -7,11 +7,11 @@
             </h2>
             <blockquote>
                 <p>
-                    "Always code as if the guy who ends up maintaining your code will be a violent psychopath who knows where you live."
+                    {{ content.quote }}
                 </p>
-                <small>  — John F. Woods</small>
+                <small>  — {{ content.author }}</small>
             </blockquote>
-            <a class="btn" href="/Neveena-Frontend_Developer.pdf" download>
+            <a class="btn" :href="content.resume" download>
                 <div class="btn-custom">
                     Download Resume
                 </div>
@@ -28,6 +28,15 @@ import Typed from 'typed.js';
 
 export default {
     name: 'Banner',
+
+    props: {
+        content: {
+            type: Object,
+            default: () => {
+                return {};
+            }
+        }
+    },
 
     mounted() {
         const options = {
