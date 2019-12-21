@@ -31,6 +31,6 @@ export default {
         color: rgba(255, 255, 255, 0.6);
     }
     hr {
-        border-top: 1px solid rgba(204, 243, 129, 0.56);
+        border-top: 2px solid rgba(255, 171, 80, 0.3);
     }
 </style>

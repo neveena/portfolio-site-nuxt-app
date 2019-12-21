@@ -58,7 +58,7 @@ export default {
                     index: 3
                 },
                 {
-                    name: 'Contact us',
+                    name: 'Contact',
                     index: 4
                 }
             ]
