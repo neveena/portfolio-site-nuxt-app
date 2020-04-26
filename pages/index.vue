@@ -49,7 +49,6 @@ export default {
             animationTime: 1000,
             pagination: true,
             updateURL: false,
-            beforeMove: (index) => {},
             afterMove: (index) => {
                 this.$store.commit('navigation/setCurrentSection', parseInt(index));
             },

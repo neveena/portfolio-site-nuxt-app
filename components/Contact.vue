@@ -4,7 +4,7 @@
             <h2>{{ content.title }}</h2>
             <blockquote>
                 {{ content.quote }}
-                <small><i>~ {{ content.author }}</i></small>
+                <!-- <small><i>~ {{ content.author }}</i></small> -->
             </blockquote>
             <form name="contact-form" method="post">
                 <input type="hidden" name="form-name" value="contact-form">

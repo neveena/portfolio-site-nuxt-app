@@ -1,7 +1,7 @@
 const { resolve } = require('path');
 
 export default {
-    mode: 'spa',
+    mode: 'universal',
     generate: {
         fallback: true
     },
@@ -13,6 +13,8 @@ export default {
         meta: [
             { charset: 'utf-8' },
             { name: 'viewport', content: 'width=device-width, initial-scale=1' },
+            { name: 'keywords', content: 'Front-end developer, Responsive design, vue.js, resume, portfolio, developer, web developer' },
+            { name: 'robots', content: 'index, follow' },
             { hid: 'description', name: 'description', content: process.env.npm_package_description || '' }
         ],
         link: [
@@ -91,10 +93,10 @@ export default {
     ** Build configuration
     */
     build: {
-      /*
-      ** You can extend webpack config here
-      */
-      extend (config, ctx) {
-      }
+        /*
+        ** You can extend webpack config here
+        */
+        extend(config, ctx) {
+        }
     }
-  }
+}

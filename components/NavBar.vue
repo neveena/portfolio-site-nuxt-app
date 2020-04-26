@@ -12,7 +12,9 @@
                     aria-haspopup="menu"
                     aria-label="Open menu"
                     class="hamburger_menu"
-                />
+                >
+                    <span class="sr-only">menu</span>
+                </a>
                 <b-navbar-nav :class="{ show: status.navOpen }" class="ml-auto">
                     <b-nav-item
                         v-for="nav in navigation"
