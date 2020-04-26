@@ -9,7 +9,7 @@
                 <p>
                     {{ content.quote }}
                 </p>
-                <small>  — {{ content.author }}</small>
+                <!-- <small>  — {{ content.author }}</small> -->
             </blockquote>
             <a :href="content.resume" class="btn" download>
                 <div class="btn-custom">
