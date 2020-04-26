@@ -38,5 +38,5 @@ collections:
       fields:
         - {label: Title, name: title, widget: string}
         - {label: Quote, name: quote, widget: string}
-        - {label: Author, name: author, widget: string}
+        # - {label: Author, name: author, widget: string}
 

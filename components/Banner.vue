@@ -123,7 +123,7 @@ export default {
     }
 
     blockquote {
-        max-width: 500px;
+        max-width: 540px;
         margin: 1.2rem auto;
         p {
             margin-bottom: 0.5rem;
