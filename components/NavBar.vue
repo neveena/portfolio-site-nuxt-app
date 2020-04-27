@@ -104,6 +104,8 @@ export default {
                     behavior: 'smooth'
                 });
             }
+
+            this.navOpen();
         }
     }
 };

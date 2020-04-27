@@ -43,19 +43,21 @@ export default {
 
     mounted() {
         /* eslint-disable */
-        onePageScroll('.main', {
-            sectionContainer: 'section',
-            easing: 'ease',
-            animationTime: 1000,
-            pagination: true,
-            updateURL: false,
-            afterMove: (index) => {
-                this.$store.commit('navigation/setCurrentSection', parseInt(index));
-            },
-            loop: false,
-            keyboard: true,
-            responsiveFallback: 767
-        });
+        this.$nextTick(() => {
+            onePageScroll('.main', {
+                sectionContainer: 'section',
+                easing: 'ease',
+                animationTime: 1000,
+                pagination: true,
+                updateURL: false,
+                afterMove: (index) => {
+                    this.$store.commit('navigation/setCurrentSection', parseInt(index));
+                },
+                loop: false,
+                keyboard: true,
+                responsiveFallback: 767
+            });
+        })
     }
 };
 </script>
