@@ -1,7 +1,7 @@
 const { resolve } = require('path');
 
 export default {
-    mode: 'universal',
+    mode: 'spa',
     generate: {
         fallback: true
     },
